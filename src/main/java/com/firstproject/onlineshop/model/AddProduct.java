@@ -24,13 +24,13 @@ public class AddProduct extends VerticalLayout {
         Notification notification = new Notification("Product saved", 3000);
         ListBox<ProductType> productList = new ListBox<>();
         productList.setItems(ProductType.CPU, ProductType.GPU, ProductType.PSU, ProductType.MOBO, ProductType.RAM, ProductType.HDD_SSD, ProductType.CASE, ProductType.ACCESSORY, ProductType.SOFTWARE);
-        double price = Double.parseDouble(textFieldPrice.getValue());
+
 
 
         button.addClickListener(clickEvent -> {
             Product newProduct = new Product();
             newProduct.setName(textFieldName.getValue());
-            newProduct.setPrice(price);
+            newProduct.setPrice(Double.parseDouble(textFieldPrice.getValue()));
             newProduct.setProductType(productList.getValue());
             repo.save(newProduct);
             notification.open();
