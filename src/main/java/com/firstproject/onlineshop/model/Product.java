@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import javax.persistence.Embeddable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -14,6 +15,7 @@ import java.math.BigDecimal;
 @Setter
 @NoArgsConstructor
 public class Product {
+
     @Id
     @GeneratedValue
     private Long id;
